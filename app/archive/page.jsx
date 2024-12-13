@@ -50,10 +50,18 @@ const projects = [
 
 const Archive = () => {
   const [project, setProject] = useState(projects[0]);
+
+  const handleSlideChange = (swiper) => {
+    // obtener index de slide actual
+    const currentIndex = swiper.activeIndex;
+    // actualizar estado  en base al index de slide actual
+    setProject(projects[currentIndex]);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 1, transition: {delay:2.4, } }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
@@ -103,7 +111,34 @@ const Archive = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">slide</div>
+          <div className="w-full xl:w-[50%]">
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={1}
+              className="xl:h-[520px] xl:w-[50%]"
+              onSlideChange={handleSlideChange}
+            >
+              {projects.map((project, index) => {
+                return (
+                  <SwiperSlide key={index} className="w-full">
+                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                      {/* overlay */}
+                      <div></div>
+                      {/* imagen */}
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={project.image}
+                          fill
+                          className="object-cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
         </div>
       </div>
     </motion.div>
