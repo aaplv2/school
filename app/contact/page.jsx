@@ -66,6 +66,20 @@ const Contact = () => {
                 <Input type="email" placeholder="Email" />
                 <Input type="phone" placeholder="Teléfono" />
               </div>
+              {/* select */}
+              <Select>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Selecciona un plan" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Selecciona un plan</SelectLabel>
+                    <SelectItem value="est">Clase suelta</SelectItem>
+                    <SelectItem value="cst">Plan mensual</SelectItem>
+                    <SelectItem value="mst">Plan Semestral</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </form>
           </div>
           {/* info */}
