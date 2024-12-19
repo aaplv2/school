@@ -80,6 +80,11 @@ const Contact = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              {/* textarea */}
+              <Textarea
+                className="h-[200px]"
+                placeholder="Déjanos un mensaje"
+              />
             </form>
           </div>
           {/* info */}
