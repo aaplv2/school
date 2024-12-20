@@ -21,4 +21,7 @@
   .text-outline-hover {
     -webkit-text-stroke: 1px #fa9f18;
   }
+  :root {
+    --radius: 0.5rem;
+  }
 }
