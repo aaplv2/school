@@ -7,7 +7,7 @@ const PageTransition = ({ children }) => {
   const pathname = usePathname();
   return (
     <AnimatePresence>
-      <div key={pathname}>
+      <div key={pathname} className="flex-grow flex flex-col">
         <motion.div
           initial={{ opacity: 1 }}
           animate={{
