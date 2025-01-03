@@ -19,7 +19,7 @@ const Header = () => {
         {/* desktop nav & join button*/}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/join">
+          <Link href="/contact">
             <Button>Unirse</Button>
           </Link>
         </div>
